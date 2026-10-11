@@ -6,6 +6,7 @@
 // Shows Isaac's current stats on the left side of the screen, like Repentance's "Found HUD":
 // speed, tears, damage, range, shot speed, luck, devil room and angel room chance.
 // When a stat changes, the difference is shown next to it for a moment (green up, red down).
+// While a long EID Flash description reaches down to the stats, they fade out so both stay readable.
 //
 // Every value is read from or computed by the game's own code in the game clip _root.a (sprite 6765):
 //  - speed:      _root.playsp, recomputed by the game every frame (playc)
@@ -14,7 +15,8 @@
 //  - damage:     dmgdo(), the function every tear's damage comes from, with the tear's x1.15 for Cricket's Head,
 //                Blood of the Martyr, Magic Mushroom and The Devil / Book of Belial (create(), tear type 2)
 //  - range:      the game's range value _root.firrr (23 by default; the pause screen bar), from the tear height
-//                and fall speed set in create(), without its random per-tear part
+//                and fall speed set in create() (Number One, Cain and Samson lower it), without its random
+//                per-tear part
 //  - shot speed: the tear speed multiplier from create() (clamped to 0.6 - 1.42, My Reflection x1.4)
 //  - luck:       _root.luck
 //  - devil / angel room: the roll made when the boss room door opens (the "sat" door in the room code)
@@ -187,6 +189,19 @@ function shudStats(g)
    }
    var _loc7_ = (_loc2_[12] + _loc2_[30] + _loc2_[31] + _loc2_[29] + _loc2_[71] * 3 + _loc2_[101] + _loc2_[110] + _loc2_[121] + _loc2_[182] * 1.5 + _loc2_[197] + _loc2_[14] + _loc2_[189]) * 0.5;
    var _loc9_ = 23 + (_loc2_[12] - _loc2_[71] + _loc2_[30] + _loc2_[31] + _loc2_[29]) * 5 + _loc7_ * 5.5;
+   // lower tears: Number One, else Cain or Samson (create(), before the range is computed)
+   if(_loc2_[6])
+   {
+      _loc9_ -= 13;
+   }
+   else if(_root.skiner == 2)
+   {
+      _loc9_ -= 6;
+   }
+   else if(_root.skiner == 6)
+   {
+      _loc9_ -= 5;
+   }
    var _loc8_ = 1 - (_loc2_[110] + _loc2_[108]) * 0.25 - 0.17 * (_loc2_[153] + _loc2_[16] + _loc2_[159] + _loc2_[169]) + _loc2_[143] * 0.2 + _loc2_[165] * 0.23 + _loc2_[176] * 0.16 + (_loc2_[183] + _loc2_[194]) * 0.16 - _loc2_[182] * 0.25;
    if(_root.skiner == 6)
    {
@@ -333,6 +348,21 @@ _root.shudLayer.onEnterFrame = function()
       }
       _loc2_++;
    }
-   this._visible = true;
+   // EID Flash's description box (_root.eidLayer) can reach down to the stats: fade them out while it does
+   var _loc8_ = _root.eidLayer;
+   var _loc9_ = false;
+   if(_loc8_._visible && _loc8_.canvas != undefined)
+   {
+      if(_loc8_.lastKey != this.eidKey || _loc8_.lastEntity != this.eidEntity)
+      {
+         this.eidKey = _loc8_.lastKey;
+         this.eidEntity = _loc8_.lastEntity;
+         var _loc10_ = _loc8_.canvas.getColorBoundsRect(0xFF000000,0,false);
+         this.eidBottom = _loc8_._y + (_loc10_.y + _loc10_.height) * _loc8_._yscale / 100;
+      }
+      _loc9_ = this.eidBottom > this._y;
+   }
+   this._alpha = _loc9_ ? Math.max(0,this._alpha - 15) : Math.min(_root.shudCfg.alpha,this._alpha + 15);
+   this._visible = this._alpha > 0;
 };
 // ---------------- end Stats HUD ----------------

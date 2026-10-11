@@ -8,7 +8,8 @@ including Wrath of the Lamb/Eternal DLC), like the stats HUD of Rebirth / Repent
 
 speed, tears, damage, range, shot speed, luck, devil room chance and angel room chance.
 
-When a stat changes, the difference is shown next to it for a moment (green up, red down).
+When a stat changes, the difference is shown next to it for a moment (green up, red down). With EID Flash, the stats fade out
+while a long item description reaches down to them.
 
 Built the same way as [EID Flash](https://github.com/tomandesMSH/FlashTBoI-EID): a patcher builds the modded game from your own
 copy, and both mods can be used together.
