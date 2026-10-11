@@ -5,7 +5,7 @@ including Wrath of the Lamb and the Eternal Edition). It shows Isaac's speed, te
 devil room chance and angel room chance on the left side of the screen, like Repentance's stats HUD, with the
 Repentance HUD icons (from EID's inline icons) and EID's bitmap font.
 
-It is built exactly like [EID Flash](https://github.com/tomandesMSH/Flash-EID/blob/master/flash/README.md): players install it with the
+It is built exactly like [EID Flash](https://github.com/tomandesMSH/FlashTBoI-EID/blob/master/flash/README.md): players install it with the
 **patcher** (`patcher/`), which builds the modded game from their own copy, so no game files are ever distributed.
 See `patcher/README.txt` for the player instructions.
 

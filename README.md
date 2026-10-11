@@ -10,7 +10,7 @@ speed, tears, damage, range, shot speed, luck, devil room chance and angel room 
 
 When a stat changes, the difference is shown next to it for a moment (green up, red down).
 
-Built the same way as [EID Flash](https://github.com/tomandesMSH/Flash-EID): a patcher builds the modded game from your own
+Built the same way as [EID Flash](https://github.com/tomandesMSH/FlashTBoI-EID): a patcher builds the modded game from your own
 copy, and both mods can be used together.
 
 ## Screenshots
@@ -52,7 +52,7 @@ Details: [`flash/patcher/README.txt`](flash/patcher/README.txt). Development and
 [`flash/README.md`](flash/README.md).
 
 ## Other mods
-- [EID Flash](https://github.com/tomandesMSH/Flash-EID): descriptions for items, trinkets, cards and pills
+- [EID Flash](https://github.com/tomandesMSH/FlashTBoI-EID): descriptions for items, trinkets, cards and pills
 - [Debug Console](https://github.com/tomandesMSH/FlashTBoI-DebugConsole): Repentance's debug console (giveitem, spawn, goto, ...)
 - [TBoI Flash Mods](https://github.com/tomandesMSH/FlashTBoI-Mods/releases/latest): installer for all of them
 
