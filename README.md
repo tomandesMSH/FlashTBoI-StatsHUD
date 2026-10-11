@@ -38,7 +38,9 @@ No game files are distributed. The patcher builds the modded game from your own 
    The Binding of Isaac > Properties > General > **Launch Options**. Steam's **Play** button then starts Stats HUD.
    Or start the game with `Stats HUD\Stats HUD.exe`.
 
-**With EID Flash:** install EID Flash first, then run the patcher on its result:
+**With other mods:** the easiest way is the [TBoI Flash Mods](https://github.com/tomandesMSH/FlashTBoI-Mods/releases/latest)
+installer: tick the mods you want, and it installs the newest version of each. Or install EID Flash first, then run
+the patcher on its result:
 
     Stats_HUD_Patcher.exe --swf "EID Flash\isaac_eid.swf"
 
@@ -48,6 +50,11 @@ Prefer not to run an exe? The zip has the plain Python script (`python stats_hud
 
 Details: [`flash/patcher/README.txt`](flash/patcher/README.txt). Development and technical notes:
 [`flash/README.md`](flash/README.md).
+
+## Other mods
+- [EID Flash](https://github.com/tomandesMSH/Flash-EID): descriptions for items, trinkets, cards and pills
+- [Debug Console](https://github.com/tomandesMSH/FlashTBoI-DebugConsole): Repentance's debug console (giveitem, spawn, goto, ...)
+- [TBoI Flash Mods](https://github.com/tomandesMSH/FlashTBoI-Mods/releases/latest): installer for all of them
 
 ## Credits
 See [CREDITS.md](CREDITS.md).
